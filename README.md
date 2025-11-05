@@ -1,29 +1,23 @@
-AI Keuangan Advanced — Paket Static (Client-side Heavy)
-=========================================================
+
+AI Keuangan Chatbot — Final (Local, Client-side)
+===============================================
+
+Generated: 2025-11-05
 
 Isi paket:
-- index.html   -> Halaman utama
-- style.css    -> Styling (Dark & Bright themes)
-- ai.js        -> TensorFlow.js AI logic, training & persistence (IndexedDB)
-- app.js       -> UI glue, charts (Chart.js), storage, wishlist, settings
-- README.md    -> Berkas ini
+- index.html  -> Halaman chat UI (mirip ChatGPT)
+- style.css   -> Styling tema AMOLED/Dark/Bright, chat bubbles
+- script.js   -> Logika percakapan, parsing angka, perhitungan realistis, local learning
+- ai_memory.json -> Contoh kamus awal (juga disimpan di localStorage saat jalan)
+- README.md   -> Panduan singkat
 
-Fitur utama:
-- Dua tema: Dark Elegan + Bright Ceria (user dapat switch & simpan preferensi)
-- Input penghasilan, tabungan, wishlist item (user bisa masukkan harga nyata)
-- Transaksi: AI belajar dari transaksi yang ditambahkan; data disimpan lokal
-- TensorFlow.js: model ringan yang dapat dilatih di browser dan disimpan ke IndexedDB
-- Chart.js: visualisasi alokasi dan histori pengeluaran
-- Pengaturan: auto-train, confidence threshold, default theme
-- Dirancang untuk penggunaan publik (client-side). Jika butuh penyimpanan terpusat, perlu backend.
-
-Deploy ke GitHub Pages:
-1. Extract semua file ke folder repo. Pastikan index.html ada di root atau folder docs/.
-2. Commit & push. Aktifkan GitHub Pages via Settings -> Pages.
-3. Aplikasi akan dapat diakses publik (model tetap disimpan pada browser tiap user).
+Cara pakai lokal:
+1. Ekstrak ZIP dan buka index.html di browser (Chrome/Firefox). Semua bekerja offline.
+2. Ketik input di bagian bawah seperti: '5000' atau 'lima ribu' atau 'penghasilan 5 juta per bulan'.
+3. Ikuti percakapan chat; AI akan menanyakan periode, tabungan, target, dan durasi.
+4. Di Pengaturan (⚙️) kamu bisa ubah tema, gaya bahasa, atau aktifkan notifikasi.
 
 Catatan teknis & privasi:
-- Semua data tersimpan lokal (LocalStorage/IndexedDB). Pengguna harus diberi pilihan ekspor/back-up.
-- TensorFlow.js dimuat dari CDN. Pastikan koneksi internet waktu pertama load.
-- Jika Anda ingin fitur sinkronisasi account & server, saya bisa bantu buatkan backend (Flask/Node + database).
-
+- Semua data disimpan di LocalStorage. Untuk penggunaan multi-user dan server, perlu backend.
+- AI menyimpan kamus sederhana dan pengaturan di localStorage untuk memahami typo dan istilah lokal.
+- Untuk export data: buka DevTools -> Application -> Local Storage -> copy JSON.
